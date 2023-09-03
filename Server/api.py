@@ -54,15 +54,15 @@ embeddingLogger = logging.getLogger('embedding')
 embeddingLogger.setLevel(logging.INFO)
 embeddingLogger.addHandler(embeddingHandler)
 
-target_url = 'https://api.openai.com/v1/chat/completions'
-authorization = ''
+target_url = 'https://api.chatanywhere.com.cn/v1/chat/completions'
+authorization = 'sk-Nn4MSf4TFdBSXpOQ84Tfst4JRjt4jltzXUjKj9ZB2cnHVZze'
 
 gpt35_token = 6000
 gpt4_token = 3000
 
 langchain.verbose = True
 os.environ['OPENAI_API_KEY'] = authorization
-llm35 = ChatOpenAI(model='gpt-3.5-turbo-16k',
+llm35 = ChatOpenAI(model='gpt-3.5-turbo-0613',
                    temperature=0.7, max_tokens=gpt35_token)
 llm4 = ChatOpenAI(model='gpt-4', temperature=0.7, max_tokens=gpt4_token)
 text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
